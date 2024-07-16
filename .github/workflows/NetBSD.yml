@@ -61,6 +61,8 @@ jobs:
         sync_files: false
         shutdown_vm: false
         run: |
+          uname -a
+          echo $PKG_PATH
           echo "Success"
     - name: Shutdown VM
       uses: cross-platform-actions/action@v0.25.0
