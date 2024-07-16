@@ -36,6 +36,19 @@ jobs:
         sync_files: runner-to-vm
         shutdown_vm: false
         run: true
+    - name: Info
+      uses: cross-platform-actions/action@v0.25.0
+      with:
+        architecture: x86_64
+        memory: 4G
+        operating_system: netbsd
+        version: ${{matrix.version}}
+        shell: bash
+        sync_files: false
+        shutdown_vm: false
+        run: |
+          uname -a
+          echo $PKG_PATH
     - name: Install dependencies
       uses: cross-platform-actions/action@v0.25.0
       with:
@@ -61,8 +74,6 @@ jobs:
         sync_files: false
         shutdown_vm: false
         run: |
-          uname -a
-          echo $PKG_PATH
           echo "Success"
     - name: Shutdown VM
       uses: cross-platform-actions/action@v0.25.0
