@@ -49,6 +49,7 @@ jobs:
         run: |
           uname -a
           echo $PKG_PATH
+          cat /usr/pkg/etc/pkgin/repositories.conf
     - name: Install dependencies
       uses: cross-platform-actions/action@v0.25.0
       with:
