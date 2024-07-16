@@ -63,6 +63,7 @@ jobs:
         run: |
           sudo pkgin -y update
           sudo pkgin -y full-upgrade
+          sudo pking -y install subversion-base p5-subversion py-subversion ruby-subversion
           sudo pkgin -y install subversion
     - name: Test
       uses: cross-platform-actions/action@v0.25.0
