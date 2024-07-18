@@ -47,6 +47,7 @@ jobs:
         sync_files: false
         shutdown_vm: false
         run: |
+          sysctl -n hw.ncpu
           uname -a
           echo $PKG_PATH
           cat /usr/pkg/etc/pkgin/repositories.conf
